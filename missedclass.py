@@ -1,11 +1,13 @@
 import streamlit as st
-import pandas as pd
 import pickle
+from pathlib import Path
 
-with open("mode1.pkl", "rb") as f:
+BASE_DIR = Path(__file__).resolve().parent
+
+with open(BASE_DIR / "model1.pkl", "rb") as f:
     model = pickle.load(f)
 
-with open("vectorizer.pkl", "rb") as f:
+with open(BASE_DIR / "vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
 st.title("Sentiment Analysis")
@@ -109,4 +111,5 @@ if st.button("Analyze sentiment"):
 # y_pred= model1.predict(X_test_tfidf)
 # accuracy_score = accuracy_score(y_test, y_pred)
 # st.subheader("Accuracy")
+
 # st.write(f"Accuracy:{accuracy:2f}")
