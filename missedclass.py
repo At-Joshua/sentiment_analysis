@@ -4,7 +4,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-with open(BASE_DIR / "model1.pkl", "rb") as f:
+with open(BASE_DIR / "mode1.pkl", "rb") as f:
     model = pickle.load(f)
 
 with open(BASE_DIR / "vectorizer.pkl", "rb") as f:
@@ -113,3 +113,4 @@ if st.button("Analyze sentiment"):
 # st.subheader("Accuracy")
 
 # st.write(f"Accuracy:{accuracy:2f}")
+
